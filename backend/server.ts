@@ -11,6 +11,7 @@ import Static from "@fastify/static";
 import Multipart, { MultipartFile } from "@fastify/multipart";
 import { countriesAndCitiesController } from "./src/controllers/countries-and-cities.controller";
 import { imageController } from "./src/controllers/image-controller";
+import mongoose from "./src/config/mongoose";
 import cityTimezones from "city-timezones";
 
 import moment from "moment-timezone";
@@ -18,6 +19,8 @@ import moment from "moment-timezone";
 interface eventParams {
   id: string;
 }
+
+const connection = mongoose.connect();
 
 const server = fastify({
   logger: true,

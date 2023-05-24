@@ -19,6 +19,7 @@
     "city-timezones": "^1.2.1",
     "fastify": "^4.17.0",
     "moment-timezone": "^0.5.43",
+    "mongoose": "^7.2.0",
     "nodemon": "^2.0.22",
     "ts-node": "^10.9.1",
     "uuid": "^9.0.0"
