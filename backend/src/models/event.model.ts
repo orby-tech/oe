@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { EventOnPoster } from "@common/types/event";
 
-const InstanceScheme = new Schema(
+const schema = new Schema(
   {
     id: {
       type: String,
@@ -56,5 +56,12 @@ const InstanceScheme = new Schema(
   }
 );
 
-const EventModel = mongoose.model<EventOnPoster>("Event", InstanceScheme);
+schema.index({
+  title: "text",
+  description: "text",
+  "location.city": "text",
+  "location.country": "text",
+});
+
+const EventModel = mongoose.model<EventOnPoster>("Event", schema);
 export default EventModel;
